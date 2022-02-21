@@ -8,6 +8,13 @@ profit = 0
 machine_on = True
 
 
+def request_coins():
+    quarters = float(input("How many quarters?: "))
+    dimes = float(input("How many dimes?: "))
+    nickels = float(input("How many nickels?: "))
+    pennies = float(input("How many pennies?: "))
+    
+    
 def print_report(w, m, c, p):
     print(f"Water: {w}ml")
     print(f"Milk: {m}ml")
@@ -35,10 +42,7 @@ while machine_on == True:
         print_report(water, milk, coffee, profit)
     elif coffee_choice == "espresso":
         print("Please insert coins. ")
-        quarters = float(input("How many quarters?: "))
-        dimes = float(input("How many dimes?: "))
-        nickels = float(input("How many nickels?: "))
-        pennies = float(input("How many pennies?: "))
+        request_coins()
         if (quarters * 25 / 100) + (dimes * 10 / 100) + (nickels * 5 / 100) + (pennies * 1 / 100) < 1.5:
             insufficient_funds(quarters, dimes, nickels, pennies, 1.5)
         elif water < 50:
